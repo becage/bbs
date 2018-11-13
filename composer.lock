@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae37acb96820a2911e667dfaedd765d2",
+    "content-hash": "c1f828137d36db2147425ec7d1ac00d2",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2074,6 +2074,53 @@
             "time": "2017-09-02T17:10:46+00:00"
         },
         {
+            "name": "overtrue/easy-sms",
+            "version": "1.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/overtrue/easy-sms.git",
+                "reference": "d7e8fd6d6e2919787295020aa976ae08f39c7b9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/overtrue/easy-sms/zipball/d7e8fd6d6e2919787295020aa976ae08f39c7b9d",
+                "reference": "d7e8fd6d6e2919787295020aa976ae08f39c7b9d",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "mockery/mockery": "1.0.x-dev",
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Overtrue\\EasySms\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "overtrue",
+                    "email": "i@overtrue.me"
+                }
+            ],
+            "description": "The easiest way to send short message.",
+            "time": "2018-09-14T13:43:38+00:00"
+        },
+        {
             "name": "overtrue/laravel-lang",
             "version": "3.0.8",
             "source": {
@@ -2913,16 +2960,16 @@
         },
         {
             "name": "summerblue/administrator",
-            "version": "v1.1.4",
+            "version": "v1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/summerblue/administrator.git",
-                "reference": "a13939304c1dbba15ab56947f3ef9937657f586c"
+                "reference": "22869b39e471dcf43dd7eca7fd4839cc3836f14e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/summerblue/administrator/zipball/a13939304c1dbba15ab56947f3ef9937657f586c",
-                "reference": "a13939304c1dbba15ab56947f3ef9937657f586c",
+                "url": "https://api.github.com/repos/summerblue/administrator/zipball/22869b39e471dcf43dd7eca7fd4839cc3836f14e",
+                "reference": "22869b39e471dcf43dd7eca7fd4839cc3836f14e",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2976,7 +3023,7 @@
                 "laravel",
                 "laravel-administrator"
             ],
-            "time": "2017-10-27T11:08:56+00:00"
+            "time": "2018-06-17T04:15:56+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
