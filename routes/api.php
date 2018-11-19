@@ -46,7 +46,8 @@ $api->version('v1', [
         'expires' => config('api.rate_limits.access.expires'),
     ], function ($api) {
         // 游客可以访问的接口
-
+        $api->get('categories', 'CategoriesController@index')
+            ->name('api.categories.index');
 
         // 需要token的接口
         $api->group(['middleware' => 'api.auth'], function ($api) {
