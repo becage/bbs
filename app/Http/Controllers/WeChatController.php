@@ -23,13 +23,8 @@ class WeChatController extends Controller
 
         $app = app('wechat.official_account');
         $app->server->push(WechatTextMsgHandler::class, Message::TEXT); // 文本消息
-        // $msg = $app->server->getMessage();
-        // if ($msg['MsgType'] == 'text' && $msg['Content'] == '【收到不支持的消息类型，暂无法显示】') {
-        //     $app->server->push(OtherHandler::class);
-        // } else {
-        //     $app->server->push(TextMessageHandler::class, Message::TEXT); // 文本消息
-        // }
-        // $app->server->push(ImageMessageHandler::class, Message::IMAGE); // 图片消息
+        $app->server->push(WechatImageMsgHandler::class, Message::IMAGE); // 图片消息
+        $app->server->push(WechatOtherMsgHandler::class);
 
         return $app->server->serve();
     }

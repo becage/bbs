@@ -12,6 +12,6 @@ class WechatOtherMsgHandler implements EventHandlerInterface
 {
     public function handle($payload = null)
     {
-        return 'WechatOtherMsgHandler';
+        return "您来啦：\r\n 1.可以跟阿猫聊天；\r\n2.可以跟阿猫斗图；\r\n3.回复‘天气’；\r\n4.回复‘绕口令’";
     }
 }
