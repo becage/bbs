@@ -2,6 +2,7 @@
 
 namespace App\Handlers;
 
+use DB;
 use EasyWeChat\Factory;
 use EasyWeChat\Kernel\Contracts\EventHandlerInterface;
 use EasyWeChat\Kernel\Messages\Image;
