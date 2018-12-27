@@ -9,6 +9,8 @@ use EasyWeChat\Kernel\Contracts\EventHandlerInterface;
 use EasyWeChat\Kernel\Messages\Message;
 use EasyWeChat\Kernel\Messages\Image;
 use App\Handlers\WechatTextMsgHandler;
+use App\Handlers\WechatImageMsgHandler;
+use App\Handlers\WechatOtherMsgHandler;
 
 class WeChatController extends Controller
 {
