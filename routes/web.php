@@ -32,3 +32,5 @@ Route::get('permission-denied', 'PagesController@permissionDenied')->name('permi
 Route::get('/s', function () {
     return view('map', ['domain' => env('APP_URL')]);
 });
+
+Route::any('/wechat', 'WeChatController@serve');
