@@ -45,4 +45,9 @@ return [
         'client_secret' => env('WEIXIN_SECRET'),
         'redirect' => env('WEIXIN_REDIRECT_URI'),
     ],
+
+    'turing_robot' => [
+        'apikey' => env('Turing_Robot_APIKEY'),
+        'userid'   => env('Turing_Robot_USERID'),
+    ],
 ];
