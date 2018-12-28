@@ -31,11 +31,12 @@ class WechatTextMsgHandler implements EventHandlerInterface
         } else {
             // 图灵机器人 api 接口
             $response = app(TuringRobotHandler::class)->chat($payload['Content']);
+            $str = $response['first'];
             if (preg_match('/笑话+/', $payload['Content'])) {
-                $img = app(ImageUploadHandler::class)->downfile($res['second'], 'storage/turings/joke.jpg');
+                $img = app(ImageUploadHandler::class)->downfile($response['second'], 'storage/turings/joke.jpg');
                 $img = Inimage::make($img);
                 $img->insert('storage/turings/logo.jpg', 'bottom-right', 10, 10);
-                $img->text($res['first'], 202, 222, function ($font) {
+                $img->text($response['first'], 202, 222, function ($font) {
                     $font->file('fonts/chinese.ttf');
                     $font->size('28');
                     $font->color('#f44336');
