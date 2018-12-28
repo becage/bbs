@@ -32,10 +32,17 @@ class TuringRobotHandler
         $response = $http->post($api, $data);
         $res = json_decode($response->getBody(), true);
         
-        if ($res['results'][0]['resultType'] == 'image') {
-            return $res['results'][0]['values']['image'];
-        } else {
-            return $res['results'][0]['values']['text'];
+        // 对图灵机器人返回的结果 判断 处理
+        $turing['second'] = '';
+        if (count($res['results']) == 1) {
+            $turing['first'] = ($res['results'][0]['resultType'] == 'image') ? $res['results'][0]['values']['image'] : $res['results'][0]['values']['text'];
+        } elseif (count($res['results']) >= 2) {
+            if ($res['results'][0]['resultType'] == 'text' && $res['results'][1]['resultType'] == 'image') {
+                $turing['first'] = $res['results'][0]['values']['text'];
+                $turing['second'] = $res['results'][1]['values']['image'];
+            }
         }
+
+        return $turing;
     }
 }
