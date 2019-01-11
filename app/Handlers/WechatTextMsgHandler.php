@@ -25,7 +25,7 @@ class WechatTextMsgHandler implements EventHandlerInterface
     {
         // easywechat收到用户发的表情，为if的判断内容
         if ($payload['Content'] == '【收到不支持的消息类型，暂无法显示】') {
-            $emoticon = DB::select('select id,img from emoticonpkg where id = ?', [rand(1, 451)]);
+            $emoticon = DB::select('select id,img from emoticonpkg where id = ?', [rand(1, 627)]);
             DB::update('update emoticonpkg set used=(used + 1) where id = ?', [$emoticon[0]->id]);
             $str = $this->uploadWechatImage($emoticon[0]->img);
         } else {

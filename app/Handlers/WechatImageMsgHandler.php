@@ -26,7 +26,7 @@ class WechatImageMsgHandler implements EventHandlerInterface
             app(ImageUploadHandler::class)->downfile($payload['PicUrl']);
         }
 
-        $emoticon = DB::select('select id,img from emoticonpkg where id = ?', [rand(1, 451)]);
+        $emoticon = DB::select('select id,img from emoticonpkg where id = ?', [rand(1, 627)]);
         DB::update('update emoticonpkg set used=(used + 1) where id = ?', [$emoticon[0]->id]);
         $str = $this->uploadWechatImage($emoticon[0]->img);
         return $str;
