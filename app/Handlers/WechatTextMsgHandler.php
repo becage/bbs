@@ -3,6 +3,7 @@
 namespace App\Handlers;
 
 use DB;
+use Log;
 use EasyWeChat\Factory;
 use EasyWeChat\Kernel\Contracts\EventHandlerInterface;
 use EasyWeChat\Kernel\Messages\Message;
