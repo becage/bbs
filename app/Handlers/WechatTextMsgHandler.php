@@ -33,7 +33,9 @@ class WechatTextMsgHandler implements EventHandlerInterface
             $response = app(TuringRobotHandler::class)->chat($payload['Content']);
             $str = $response['first'];
             if (preg_match('/笑话+/', $payload['Content'])) {
+                Log::info('1.');
                 $img = app(ImageUploadHandler::class)->downfile($response['second'], 'storage/turings/joke.jpg');
+                Log::info('2.');
                 $img = Inimage::make($img);
                 $img->insert('storage/turings/logo.jpg', 'bottom-right', 10, 10);
                 $img->text($response['first'], 202, 222, function ($font) {
