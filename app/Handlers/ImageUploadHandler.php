@@ -2,6 +2,7 @@
 
 namespace App\Handlers;
 
+use Log;
 use Image;
 use GuzzleHttp\Client;
 
@@ -67,7 +68,9 @@ class ImageUploadHandler
     public function downfile($url, $file = '')
     {
         $http = new Client();
+        Log::info('a');
         $path = strlen($file) > 8 ? $file : 'storage/turings/tr'.time().uniqid().'.jpg';
+        Log::info('b');
         $http->get($url, ['verify' => false, 'save_to' => public_path($path)]);
         return $path;
     }
