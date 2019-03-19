@@ -33,10 +33,8 @@ class WechatTextMsgHandler implements EventHandlerInterface
             // 图灵机器人 api 接口
             $response = app(TuringRobotHandler::class)->chat($payload['Content']);
             $str = $response['first'];
-            if (preg_match('/笑话+/', $payload['Content'])) {
-                Log::info($response);
+            if (preg_match('/笑xxxxx话+/', $payload['Content'])) {
                 $img = app(ImageUploadHandler::class)->downfile($response['second'], 'storage/turings/joke.jpg');
-                Log::info('2.');
                 $img = Inimage::make($img);
                 $img->insert('storage/turings/logo.jpg', 'bottom-right', 10, 10);
                 $img->text($response['first'], 202, 222, function ($font) {

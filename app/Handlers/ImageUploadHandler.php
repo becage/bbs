@@ -69,7 +69,6 @@ class ImageUploadHandler
     {
         $http = new Client(['verify' => false]);
         $path = strlen($file) > 8 ? $file : 'storage/turings/tr'.time().uniqid().'.jpg';
-        Log::info($url);
         $http->get($url, ['save_to' => public_path($path)]);
         return $path;
     }
