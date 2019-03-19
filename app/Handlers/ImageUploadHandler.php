@@ -66,9 +66,9 @@ class ImageUploadHandler
 
     public function downfile($url, $file = '')
     {
-        $http = new Client(['verify' => false]);
+        $http = new Client();
         $path = strlen($file) > 8 ? $file : 'storage/turings/tr'.time().uniqid().'.jpg';
-        $http->get($url, ['save_to' => public_path($path)]);
+        $http->get($url, ['verify' => false, 'save_to' => public_path($path)]);
         return $path;
     }
 }
